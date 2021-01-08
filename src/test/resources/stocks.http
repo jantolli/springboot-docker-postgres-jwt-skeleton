@@ -1,0 +1,3 @@
+GET https://localhost/get/users
+Accept: */*
+Cache-Control: no-cache
