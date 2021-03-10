@@ -2,7 +2,9 @@
 This is a simple Base SpringBoot application with JWT support and PostgreSQL DB.
 This CRUD application stores users and stocks purchased by them
 
-# How to Configure Run and Test
+<br/>
+
+# How to Configure, Run and Test
 
 ## Pull and run PosgreSQL from Docker Hub: 
 ```
@@ -18,8 +20,9 @@ docker cp [BASE_DIR]/src/main/resources/initdb.sql postgres-0:/
 ```
 docker exec -it postgres-0
 ```
+<br/>
 
-## Test DB is up
+## Test DB is up and running
 ### Connect to mydb DB:
 ```
 psql -h localhost -p 5432 -U postgres -f initdb.sql 
