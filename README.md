@@ -22,7 +22,7 @@ docker exec -it postgres-0
 ```
 <br/>
 
-## Test DB is up and running
+## Verify DB is up and running
 ### Connect to mydb DB:
 ```
 psql -h localhost -p 5432 -U postgres -f initdb.sql 
