@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS user_stock (
     PRIMARY KEY (id)
 );
 
-\d;
+\d
 
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 

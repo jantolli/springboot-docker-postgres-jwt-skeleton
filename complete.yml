@@ -1,0 +1,40 @@
+# Docker Compose file Reference (https://docs.docker.com/compose/compose-file/)
+
+version: "3"
+
+# Define services
+services:
+  # Database Service (Mysql)
+  postgres:
+    image: postgres:alpine
+    network_mode: bridge
+    container_name: postgres
+    volumes:
+      # Taken from running "SHOW data_directory;" after connecting to the db
+      - postgres-data:/var/lib/postgresql/data
+      # - /Users/joseantollini/work/Skeleton/sekeleton/src/main/resources/initdb.sql
+    expose:
+      - 5432
+    ports:
+      - "5432:5432/tcp"
+    environment:
+         - POSTGRES_PASSWORD=postgres
+         - POSTGRES_USER=postgres
+         - POSTGRES_DB=mydb
+    restart: unless-stopped
+  # This is my skeleton rest api app
+  app-server:
+    image: skeleton
+    network_mode: bridge
+    container_name: skeleton
+    depends_on:
+      - postgres
+    expose:
+      - 8080
+    ports:
+      - 8080:8080
+    volumes:
+          - /Users/joseantollini/Desktop:/var/tmp
+    restart: unless-stopped
+volumes:
+  postgres-data:
